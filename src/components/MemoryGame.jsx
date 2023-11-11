@@ -3,6 +3,7 @@ import Card from "./Card";
 
 function MemoryGame() {
   const [cards, setCards] = useState(createCards(12));
+  const [score, setScore] = useState(0);
 
   function createCards(numCards) {
     // Generate unique pokemon ids in range 1 to 1017
@@ -16,7 +17,14 @@ function MemoryGame() {
       ids.push(id);
     }
 
-    return ids.map((id) => <Card key={id} id={id} handleClick={shuffle} />);
+    return ids.map((id) => (
+      <Card key={id} id={id} handleClick={handleCardClicked} />
+    ));
+  }
+
+  function handleCardClicked() {
+    setScore((score) => score + 1);
+    shuffle();
   }
 
   function shuffle() {
@@ -30,7 +38,7 @@ function MemoryGame() {
 
   return (
     <>
-      <p>Memory Game Component</p>
+      <p>Score: {score}</p>
       {cards}
     </>
   );
