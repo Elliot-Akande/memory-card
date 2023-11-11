@@ -18,11 +18,12 @@ function MemoryGame() {
     }
 
     return ids.map((id) => (
-      <Card key={id} id={id} handleClick={handleCardClicked} />
+      <Card key={id} id={id} handleClick={() => handleCardClicked(id)} />
     ));
   }
 
-  function handleCardClicked() {
+  function handleCardClicked(id) {
+    console.log({ id });
     setScore((score) => score + 1);
     shuffle();
   }
