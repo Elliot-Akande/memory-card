@@ -1,6 +1,8 @@
 import Card from "./Card";
 
 function MemoryGame() {
+  const numCards = 12;
+
   const fetchPokemon = async (imgId) => {
     const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${imgId}/`);
     const data = await response.json();
@@ -32,6 +34,7 @@ function MemoryGame() {
   return (
     <>
       <p>Memory Game Component</p>
+      {cards(numCards)}
     </>
   );
 }
