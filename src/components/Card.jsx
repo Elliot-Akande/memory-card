@@ -21,9 +21,8 @@ function Card({ id, handleClick }) {
   };
 
   return (
-    <>
-      <p>This is a card</p>
-    </>
+    <button onClick={handleClick}>
+    </button>
   );
 }
 
