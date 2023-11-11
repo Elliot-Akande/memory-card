@@ -22,6 +22,8 @@ function Card({ id, handleClick }) {
 
   return (
     <button onClick={handleClick}>
+      <img src={data.img ?? ""} alt={data.name ?? ""} />
+      <p>{data.name ?? "Loading"}</p>
     </button>
   );
 }
