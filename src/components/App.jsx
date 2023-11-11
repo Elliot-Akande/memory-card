@@ -1,11 +1,14 @@
 import { useState } from "react";
+import MemoryGame from "./MemoryGame";
 import "/src/styles/App.css";
 
 function App() {
   return (
     <>
       <header>Memory Card</header>
-      <main></main>
+      <main>
+        <MemoryGame />
+      </main>
     </>
   );
 }
