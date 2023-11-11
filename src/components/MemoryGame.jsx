@@ -1,11 +1,11 @@
+import { useState } from "react";
 import Card from "./Card";
 
 function MemoryGame() {
-  const numCards = 12;
+  const [cards, setCards] = useState(createCards(12));
 
   const cards = (numCards) => {
     const ids = [];
-    // Generate unique pokemon ids in range 1 - 1017
     for (let i = 0; i < numCards; i++) {
       let id;
       do {
