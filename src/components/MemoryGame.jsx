@@ -1,3 +1,5 @@
+import Card from "./Card";
+
 function MemoryGame() {
   const fetchPokemon = async (imgId) => {
     const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${imgId}/`);
