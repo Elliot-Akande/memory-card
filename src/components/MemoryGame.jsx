@@ -1,9 +1,16 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Card from "./Card";
 
 function MemoryGame() {
   const [cards, setCards] = useState(createCards(12));
   const [score, setScore] = useState(0);
+  const [highScore, setHighScore] = useState(0);
+
+  const clickedCards = [];
+
+  useEffect(() => {
+    if (score > highScore) setHighScore(score);
+  }, [score, highScore]);
 
   function createCards(numCards) {
     // Generate unique pokemon ids in range 1 to 1017
@@ -23,8 +30,14 @@ function MemoryGame() {
   }
 
   function handleCardClicked(id) {
-    console.log({ id });
-    setScore((score) => score + 1);
+    if (clickedCards.includes(id)) {
+      clickedCards.length = 0;
+      setScore(0);
+    } else {
+      clickedCards.push(id);
+      setScore((score) => score + 1);
+    }
+
     shuffle();
   }
 
@@ -39,7 +52,9 @@ function MemoryGame() {
 
   return (
     <>
-      <p>Score: {score}</p>
+      <p>
+        Score: {score} | High Score: {highScore}
+      </p>
       {cards}
     </>
   );
