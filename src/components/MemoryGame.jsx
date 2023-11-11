@@ -4,7 +4,8 @@ import Card from "./Card";
 function MemoryGame() {
   const [cards, setCards] = useState(createCards(12));
 
-  const cards = (numCards) => {
+  function createCards(numCards) {
+    // Generate unique pokemon ids in range 1 to 1017
     const ids = [];
     for (let i = 0; i < numCards; i++) {
       let id;
