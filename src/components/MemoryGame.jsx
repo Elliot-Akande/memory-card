@@ -16,8 +16,17 @@ function MemoryGame() {
       ids.push(id);
     }
 
-    return ids.map((id) => <Card key={id} id={id} />);
-  };
+    return ids.map((id) => <Card key={id} id={id} handleClick={shuffle} />);
+  }
+
+  function shuffle() {
+    const array = [...cards];
+    for (let i = array.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [array[i], array[j]] = [array[j], array[i]];
+    }
+    setCards(array);
+  }
 
   return (
     <>
