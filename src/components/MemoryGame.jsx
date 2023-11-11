@@ -31,7 +31,7 @@ function MemoryGame() {
   return (
     <>
       <p>Memory Game Component</p>
-      {cards(numCards)}
+      {cards}
     </>
   );
 }
