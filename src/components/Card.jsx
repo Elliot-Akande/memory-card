@@ -1,4 +1,12 @@
-function Card() {
+import { useEffect, useState } from "react";
+
+function Card({ id, handleClick }) {
+  const [data, setData] = useState({});
+
+  useEffect(() => {
+    fetchPokemon(id).then(setData);
+  }, [id]);
+
   const fetchPokemon = async (imgId) => {
     const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${imgId}/`);
     const data = await response.json();
