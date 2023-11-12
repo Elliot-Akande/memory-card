@@ -4,11 +4,12 @@ import "/src/styles/MemoryGame.css";
 
 function MemoryGame() {
   const clickedCards = [];
-  const numCards = 3;
+  const numCards = 12;
 
   const [cards, setCards] = useState(createCards(numCards));
   const [score, setScore] = useState(0);
   const [highScore, setHighScore] = useState(0);
+  const [gameOver, setGameOver] = useState(false);
 
   useEffect(() => {
     if (score > highScore) setHighScore(score);
@@ -35,12 +36,12 @@ function MemoryGame() {
     if (clickedCards.includes(id)) {
       clickedCards.length = 0;
       setScore(0);
+      setGameOver(true);
     } else {
       clickedCards.push(id);
       setScore((score) => score + 1);
+      shuffle();
     }
-
-    shuffle();
   }
 
   function shuffle() {
@@ -52,6 +53,15 @@ function MemoryGame() {
     setCards(array);
   }
 
+  const playAgain = () => {
+    window.location.reload(false);
+  };
+
+  const handleGameOver = () => {
+    setGameOver(false);
+    shuffle();
+  };
+
   return (
     <>
       <div className="score-container">
@@ -59,11 +69,19 @@ function MemoryGame() {
         <p>High Score: {highScore}</p>
       </div>
       <div className="card__container">{cards}</div>
+      {gameOver && (
+        <div className="modal-container">
+          <div className="modal">
+            Game over...
+            <button onClick={handleGameOver}>Try again</button>
+          </div>
+        </div>
+      )}
       {score === numCards && (
         <div className="modal-container">
           <div className="modal">
             You win!
-            <button>Play again</button>
+            <button onClick={playAgain}>Play again</button>
           </div>
         </div>
       )}
