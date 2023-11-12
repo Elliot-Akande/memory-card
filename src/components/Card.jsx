@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import "/src/styles/Card.css";
 
 function Card({ id, handleClick }) {
   const [data, setData] = useState({});
@@ -21,7 +22,7 @@ function Card({ id, handleClick }) {
   };
 
   return (
-    <button onClick={handleClick}>
+    <button onClick={handleClick} className="card">
       <img src={data.img ?? ""} alt={data.name ?? ""} />
       <p>{data.name ?? "Loading"}</p>
     </button>
