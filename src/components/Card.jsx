@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { RingLoader } from "react-spinners";
 import "/src/styles/Card.css";
 
 function Card({ id, handleClick }) {
@@ -33,7 +34,13 @@ function Card({ id, handleClick }) {
 
   return (
     <button onClick={handleClick} className="card">
-      <img src={data.img ?? ""} alt={data.name} />
+      {data.img ? (
+        <img src={data.img} alt={data.name} />
+      ) : (
+        <div className="loading-container">
+          <RingLoader size={48} color="#5eead4" />
+        </div>
+      )}
       {data.name}
     </button>
   );
