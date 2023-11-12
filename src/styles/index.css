@@ -1,13 +1,14 @@
 :root {
   --colour-primary: #1a1a1a;
   --colour-secondary: #242424;
+  --colour-text: rgba(255, 255, 255, 0.87);
 
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
 
   color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
+  color: var(--colour-text);
   background-color: var(--colour-secondary);
 
   font-synthesis: none;
@@ -48,6 +49,7 @@ button {
   font-family: inherit;
   background-color: var(--colour-primary);
   cursor: pointer;
+  color: var(--colour-text);
   transition: border-color 0.25s;
 }
 button:hover {
@@ -58,7 +60,7 @@ button:hover {
   :root {
     --colour-primary: #ffffff;
     --colour-secondary: #f9f9f9;
-    color: #213547;
+    --colour-text: #213547;
   }
   a:hover {
     color: #747bff;
