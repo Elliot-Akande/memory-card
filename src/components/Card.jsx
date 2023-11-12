@@ -2,10 +2,20 @@ import { useEffect, useState } from "react";
 import "/src/styles/Card.css";
 
 function Card({ id, handleClick }) {
-  const [data, setData] = useState({});
+  const [data, setData] = useState({ name: "Loading..." });
 
   useEffect(() => {
-    fetchPokemon(id).then(setData);
+    const formatName = (name) => {
+      return name
+        .replaceAll(/-/g, " ")
+        .split(" ")
+        .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+        .join(" ");
+    };
+
+    fetchPokemon(id).then((result) => {
+      setData({ ...result, name: formatName(result.name) });
+    });
   }, [id]);
 
   const fetchPokemon = async (imgId) => {
@@ -23,8 +33,8 @@ function Card({ id, handleClick }) {
 
   return (
     <button onClick={handleClick} className="card">
-      <img src={data.img ?? ""} alt={data.name ?? ""} />
-      <p>{data.name ?? "Loading"}</p>
+      <img src={data.img ?? ""} alt={data.name} />
+      {data.name}
     </button>
   );
 }
