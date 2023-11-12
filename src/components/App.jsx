@@ -1,4 +1,3 @@
-import { useState } from "react";
 import MemoryGame from "./MemoryGame";
 import "/src/styles/App.css";
 
