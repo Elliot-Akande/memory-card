@@ -3,3 +3,17 @@
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
   gap: 20px;
 }
+
+.score-container {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  font-size: 26px;
+}
+
+.score-container p {
+  margin: 0;
+  padding-top: 4px;
+  padding-bottom: 40px;
+  font-weight: bold;
+}
