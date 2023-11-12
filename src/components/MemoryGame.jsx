@@ -3,11 +3,12 @@ import Card from "./Card";
 import "/src/styles/MemoryGame.css";
 
 function MemoryGame() {
-  const [cards, setCards] = useState(createCards(12));
+  const clickedCards = [];
+  const numCards = 3;
+
+  const [cards, setCards] = useState(createCards(numCards));
   const [score, setScore] = useState(0);
   const [highScore, setHighScore] = useState(0);
-
-  const clickedCards = [];
 
   useEffect(() => {
     if (score > highScore) setHighScore(score);
@@ -58,6 +59,14 @@ function MemoryGame() {
         <p>High Score: {highScore}</p>
       </div>
       <div className="card__container">{cards}</div>
+      {score === numCards && (
+        <div className="modal-container">
+          <div className="modal">
+            You win!
+            <button>Play again</button>
+          </div>
+        </div>
+      )}
     </>
   );
 }
