@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import Card from "./Card";
+import "/src/styles/MemoryGame.css";
 
 function MemoryGame() {
   const [cards, setCards] = useState(createCards(12));
@@ -55,7 +56,7 @@ function MemoryGame() {
       <p>
         Score: {score} | High Score: {highScore}
       </p>
-      {cards}
+      <div className="card__container">{cards}</div>
     </>
   );
 }
