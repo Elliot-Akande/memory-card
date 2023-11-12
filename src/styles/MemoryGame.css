@@ -30,10 +30,11 @@
   justify-content: center;
 
   backdrop-filter: blur(2px);
+  background-color: #0000003b;
 }
 
 .modal {
-  min-height: 220px;
+  min-height: 230px;
   min-width: 400px;
 
   display: flex;
