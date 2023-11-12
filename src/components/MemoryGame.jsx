@@ -53,9 +53,10 @@ function MemoryGame() {
 
   return (
     <>
-      <p>
-        Score: {score} | High Score: {highScore}
-      </p>
+      <div className="score-container">
+        <p>Score: {score}</p>
+        <p>High Score: {highScore}</p>
+      </div>
       <div className="card__container">{cards}</div>
     </>
   );
