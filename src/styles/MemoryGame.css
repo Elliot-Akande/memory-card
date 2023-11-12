@@ -17,3 +17,57 @@
   padding-bottom: 40px;
   font-weight: bold;
 }
+
+.modal-container {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  backdrop-filter: blur(2px);
+}
+
+.modal {
+  min-height: 220px;
+  min-width: 400px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+
+  background-color: var(--colour-primary);
+  border-radius: 8px;
+  font-size: 30px;
+
+  animation: slide-in 200ms ease-out;
+}
+
+.modal button {
+  width: max-content;
+  background-color: var(--colour-text);
+  color: var(--colour-primary);
+  transition: transform 200ms;
+}
+
+.modal button:hover {
+  transform: scale(1.05);
+}
+
+@keyframes slide-in {
+  from {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
