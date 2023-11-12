@@ -1,14 +1,12 @@
 # PokéTest
 
-PokéTest is a memory game inspired by the popular Pokémon franchise. 
+PokéTest is a memory game inspired by the popular Pokémon franchise. Check out the [Live Demo](https://main--poketest-game.netlify.app/) 👈
 
 ![image](https://github.com/Elliot-Akande/memory-card/assets/92980481/ad46dc06-381a-4eb6-b9fa-069cc725b952)
 
 The goal is to test your memory and knowledge of Pokémon by selecting different cards from a grid. Each card represents a Pokémon, and you can only select each one once. If you select a card that you have already chosen before, you lose the game. If you manage to select all the cards without any duplicates, you win the game.
 
 PokéTest is built using React and the Pokémon data for the cards is fetched from PokéAPI, a free and open-source RESTful API that provides information about Pokémon, their types, abilities, moves, and more.
-
-Check out the [Live Demo](https://main--poketest-game.netlify.app/) 👈
 
 ### Why I made this project
 
