@@ -4,7 +4,7 @@ import "/src/styles/App.css";
 function App() {
   return (
     <>
-      <header>Memory Card</header>
+      <header>PokéTest</header>
       <main>
         <MemoryGame />
       </main>
